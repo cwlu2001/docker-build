@@ -2,8 +2,9 @@ name: Docker CI
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '3 3 * * *'
+  push:
+#  schedule:
+#    - cron: '3 3 * * *'
 
 jobs:
   env:
