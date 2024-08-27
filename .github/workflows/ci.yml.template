@@ -1,20 +1,19 @@
-name: Docker CI
+name: Docker CI template
 
 on:
   workflow_dispatch:
+  #schedule:
+  #  - cron: '* * * * *'
+
+env:
+  GITHUB_USERNAME: cwlu2001
+  GITHUB_REPOSITORY: 
+  GITHUB_README: README.md
+  DOCKER_USERNAME: cwlu2001
+  DOCKER_REPOSITORY: 
+  DOCKER_IMAGE_ARCH: linux/amd64,linux/arm64
 
 jobs:
-  env:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Get env
-        uses: falti/dotenv-action@v1
-        id: dotenv
-        with:
-          path: .github/workflows/.env
-
   build:
     runs-on: ubuntu-latest
     steps:
@@ -33,6 +32,10 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_REPOSITORY }}
+          labels: |
+            org.opencontainers.image.title=
+            org.opencontainers.image.url=
+            org.opencontainers.image.source=
           tags: |
             latest
 
@@ -57,5 +60,5 @@ jobs:
         with:
           username: ${{ env.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-          repository: ${{ env.GITHUB_USERNAME }}/${{ env.GITHUB_REPOSITORY }}
-          readme-filepath: ./README.md
+          repository: ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_REPOSITORY }}
+          readme-filepath: ${{ env.GITHUB_README }}
