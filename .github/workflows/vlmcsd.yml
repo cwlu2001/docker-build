@@ -33,7 +33,6 @@ jobs:
         with:
           images: ${{ env.DOCKER_USERNAME }}/${{ env.DOCKER_REPOSITORY }}
           labels: |
-            org.opencontainers.image.description=Vlmcsd is a MS Emulator
             org.opencontainers.image.source=https://github.com/cwlu2001/docker-vlmcsd
             org.opencontainers.image.title=vlmcsd
             org.opencontainers.image.url=https://github.com/cwlu2001/docker-vlmcsd
