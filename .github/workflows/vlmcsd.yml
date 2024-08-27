@@ -7,7 +7,7 @@ on:
 
 env:
   GITHUB_USERNAME: cwlu2001
-  GITHUB_REPOSITORY: vlmcsd
+  GITHUB_REPOSITORY: docker-vlmcsd
   DOCKER_USERNAME: cwlu2001
   DOCKER_REPOSITORY: vlmcsd
   DOCKER_IMAGE_ARCH: linux/amd64,linux/arm64
