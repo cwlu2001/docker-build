@@ -22,3 +22,11 @@
 [wgproxy_docker_image_size]: https://img.shields.io/docker/image-size/cwlu2001/wgproxy?logo=docker
 [wgproxy_docker_hub]: https://hub.docker.com/r/cwlu2001/wgproxy/
 <br/>
+
+![selfsigned-ssl_ci] [![selfsigned-ssl_docker_pulls]][selfsigned-ssl_docker_hub] [![selfsigned-ssl_docker_image_size]][selfsigned-ssl_docker_hub]
+
+[selfsigned-ssl_ci]: https://github.com/cwlu2001/docker-build/actions/workflows/selfsigned-ssl.yml/badge.svg
+[selfsigned-ssl_docker_pulls]: https://img.shields.io/docker/pulls/cwlu2001/selfsigned-ssl?logo=docker
+[selfsigned-ssl_docker_image_size]: https://img.shields.io/docker/image-size/cwlu2001/selfsigned-ssl?logo=docker
+[selfsigned-ssl_docker_hub]: https://hub.docker.com/r/cwlu2001/selfsigned-ssl/
+<br/>
