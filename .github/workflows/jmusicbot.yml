@@ -2,8 +2,6 @@ name: jmusicbot CI
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '33 3 * * 3'
 
 env:
   GITHUB_USERNAME: cwlu2001
