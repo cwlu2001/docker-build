@@ -20,9 +20,9 @@ jobs:
         run: |
           curl -s https://api.github.com/repos/cwlu2001/MusicBot/releases/latest > response
           TAG=$(jq -r '.tag_name' response)
-          DL_URL=$(jq -r '.assets[0].browser_download_url' response)
+          JMB=$(jq -r '.assets[0].browser_download_url' response)
           echo tag=$TAG >> $GITHUB_OUTPUT
-          echo dl_url=$DL_URL >> $GITHUB_OUTPUT
+          echo jmb=$JMB >> $GITHUB_OUTPUT
 
       - uses: actions/checkout@v4
         with:
@@ -64,7 +64,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           build-args: |
-            DL_URL=${{ steps.get_metadata.outputs.dl_url }}
+            JMB=${{ steps.get_metadata.outputs.jmb }}
 
       - name: Update Docker Hub README
         uses: peter-evans/dockerhub-description@v4
