@@ -10,14 +10,14 @@ env:
   GITHUB_REPOSITORY: docker-vlmcsd
   DOCKER_USERNAME: cwlu2001
   DOCKER_REPOSITORY: vlmcsd
-  DOCKER_IMAGE_ARCH: linux/amd64,linux/arm64
+  DOCKER_IMAGE_ARCH: linux/amd64,linux/arm64,linux/arm/v7
   GITHUB_README: README.md
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
         with:
           repository: ${{ env.GITHUB_USERNAME }}/${{ env.GITHUB_REPOSITORY }}
 
