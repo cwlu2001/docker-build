@@ -13,6 +13,11 @@ jobs:
     steps:
     - uses: actions/checkout@v6
 
+    - name: Generate tag
+      id: tag
+      run: echo "TAG=v$(date +'%Y.%m')" >> $GITHUB_OUTPUT
+
     - uses: ncipollo/release-action@v1
       with:
-        tag: 0.0.1
+        tag: ${{ steps.tag.outputs.TAG }}
+        name: Release ${{ steps.tag.outputs.TAG }}
